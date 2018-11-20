@@ -1,5 +1,5 @@
 
-properties([parameters([string( name: 'bdn'),string(name: 'jobname'),string(name: 'commitid'])])
+properties([parameters([string( name: 'bdn'),string(name: 'jobname'),string(name: 'commitid')])])
 
 println commitid
 println bdn
