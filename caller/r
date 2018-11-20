@@ -3,7 +3,8 @@ jobname = "${env.JOB_NAME}"
 println bdn
 
 node(){
-    scmVars = checkout(scm)	
+    scmVars = checkout(scm)
+	bat returnStatus: true, script: "git branch -D db_migration"
 	commitid = scmVars.GIT_COMMIT 
     stage('create files'){
         bat "mkdir GTADB"
