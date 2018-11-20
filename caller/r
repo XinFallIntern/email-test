@@ -3,7 +3,8 @@ jobname = "${env.JOB_NAME}"
 println bdn
 
 node(){
-    checkout scm
+    scmVars = checkout(scm)	
+	commitid = scmVars.GIT_COMMIT 
     stage('create files'){
         bat "mkdir GTADB"
         dir("GTADB"){
@@ -21,8 +22,5 @@ node(){
     stage('archive'){
         archiveArtifacts artifacts: 't.zip'
     }
-    println bdn
-    build (job: 'database', propagate: true, wait: true, parameters: [string(name: "bdn", value: bdn ),string(name: "jobname",value: jobname)])
-    println bdn
-    sleep 300
+    build (job: 'database', propagate: true, wait: true, parameters: [string(name: "bdn", value: bdn ),string(name: "jobname",value: jobname),string(name:"commitid",value:commitid)])
 }

@@ -1,8 +1,8 @@
 
-properties([parameters([string( name: 'bdn'),string(name: 'jobname')])])
+properties([parameters([string( name: 'bdn'),string(name: 'jobname'),string(name: 'commitid'])])
 
 
-println "yalayala"
+println commitid
 println bdn
 node() {
         copyArtifacts(
