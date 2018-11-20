@@ -3,7 +3,7 @@ jobname = "${env.JOB_NAME}"
 println bdn
 
 node(){
-    
+    checkout scm
     stage('create files'){
         bat "mkdir GTADB"
         dir("GTADB"){
