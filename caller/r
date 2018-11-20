@@ -5,6 +5,9 @@ println bdn
 node(){
     scmVars = checkout(scm)
 	bat returnStatus: true, script: "git branch -D db_migration"
+	bat returnStatus: true, script: "git push origin :db_migration"
+	bat "git checkout -b db_migration"
+	bat "git push -u origin ${scmVars.GIT_COMMIT}:db_migration"
 	commitid = scmVars.GIT_COMMIT 
     stage('create files'){
         bat "mkdir GTADB"
