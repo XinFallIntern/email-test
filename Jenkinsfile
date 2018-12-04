@@ -1,6 +1,6 @@
 pipeline {
-        agent { node{label "Docker"} 
-               dockerfile {filename "Dockerfile"} }
+        agent {dockerfile {filename "Dockerfile" 
+                           label "Docker"} }
             stages {
                 stage('Test') {
                     steps {
