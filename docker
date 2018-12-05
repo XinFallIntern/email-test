@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "hello world"
+echo $1
+if [ $1 = "run" ]
+then
+        /c/Program\ Files/Docker/docker run -t -d -w $5 -v $5:$5:rw -v $5@tmp:$5@tmp:rw test
+else
+        /c/Program\ Files/Docker/docker $@
+fi
