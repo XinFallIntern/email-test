@@ -1,2 +1,3 @@
-FROM buildtools
-ADD https://aka.ms/vs/15/release/vs_buildtools.exe  "C:\TEMP\vs_buildtools.exe"
+FROM microsoft/windowsservercore
+ADD scripts/installChoco.ps1 /installChoco.ps1
+RUN powershell .\installChoco.ps1 -Wait; Remove-Item c:\installChoco.ps1 -Force;
