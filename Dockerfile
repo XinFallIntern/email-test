@@ -1,1 +1,1 @@
-FROM node:7-alpine
+FROM debian:stretch-slim
