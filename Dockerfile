@@ -1,1 +1,1 @@
-FROM buildtools
+FROM alpine
