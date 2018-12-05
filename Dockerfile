@@ -1,2 +1,2 @@
 FROM buildtools
-RUN sleep 60
+CMD sleep 60
