@@ -1,8 +1,8 @@
 pipeline {
         agent {dockerfile {filename "Dockerfile" 
                            label "Docker"} }
-        sleep 10
             stages {
+                    sleep 10
                 stage('Test') {
                     steps {
                         sh "echo Hello world"
