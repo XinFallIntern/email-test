@@ -1,1 +1,1 @@
-FROM debian:stretch-slim
+FROM microsoft/dotnet-framwork
