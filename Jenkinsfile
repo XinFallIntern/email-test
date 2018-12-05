@@ -4,7 +4,7 @@ pipeline {
             stages {
                 stage('Test') {
                     steps {
-                        bat 'MSBuild'
+                        sh "echo Hello World"
                      }
             }
         }
