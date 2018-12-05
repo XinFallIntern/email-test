@@ -1,1 +1,1 @@
-FROM microsoft/dotnet-framwork
+FROM buildtools
