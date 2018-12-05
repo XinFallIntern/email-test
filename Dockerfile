@@ -1,3 +1,2 @@
 FROM microsoft/windowsservercore
-ADD scripts/installChoco.ps1 C:\installChoco.ps1
-RUN powershell C:\installChoco.ps1 -Wait; Remove-Item c:\installChoco.ps1 -Force;
+CMD @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
