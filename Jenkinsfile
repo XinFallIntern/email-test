@@ -1,14 +1,8 @@
-pipeline {
-        agent {dockerfile {filename "Dockerfile" 
-                           label "Docker"} }
-            stages {
-                stage('Test') {
-                    steps {
-                            sleep 1
-                        bat "echo Hello world"
-                            bat "git"
-                     }
-            }
-        }
-    
+node("Docker") {
+    checkout scm
+    def testImage = docker.build("test-image") 
+
+    testImage.inside {
+        bat 'choco'
+    }
 }
