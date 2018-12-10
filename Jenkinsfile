@@ -3,6 +3,6 @@ node("Docker") {
     def testImage = docker.build("test-image") 
 
     testImage.inside {
-        bat 'msbuild'
+        bat 'mstest'
     }
 }
