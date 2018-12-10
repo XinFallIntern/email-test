@@ -5,7 +5,7 @@ pipeline {
                 stage('Test') {
                     steps {
                             sleep 10
-                        sh "echo Hello world"
+                        bat "echo Hello world"
                      }
             }
         }
