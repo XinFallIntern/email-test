@@ -4,7 +4,7 @@ pipeline {
             stages {
                 stage('Test') {
                     steps {
-                            sleep 10
+                            sleep 1
                         bat "echo Hello world"
                      }
             }
