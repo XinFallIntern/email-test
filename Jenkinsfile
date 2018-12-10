@@ -6,7 +6,7 @@ pipeline {
                     steps {
                             sleep 1
                         bat "echo Hello world"
-                            bat "msbuild"
+                            bat "git"
                      }
             }
         }
